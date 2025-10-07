@@ -1,0 +1,2 @@
+## เรียนเรื่อง higher order function คือ function ที่รับค่า parameter เป็น function หรือ ใน process มีฟังก์ชันอยู่ ต่อมา
+Closure คือ หนึ่งใน nested function ที่นำเอา output เก่ามาใช้ได้กับ output ใหม่แล้วค่าเปลี่ยน
