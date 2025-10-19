@@ -14,7 +14,6 @@ class CookieUtil {
     }
     return cookieValue
   }
-
   static set(name, value, expires) {
     let cookieText = `${encodeURIComponent(name)}=${encodeURIComponent(value)}`
     if (expires instanceof Date) {
@@ -31,4 +30,3 @@ class CookieUtil {
   }
 } //ending class
 export { CookieUtil }
- 

@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="th">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ตั้งค่าการแสดงผล</title>
+    <style>
+      /* --- Google Fonts --- */
+      @import url("https://fonts.googleapis.com/css2?family=Sarabun:wght@400;500;700&display=swap");
+
+      /* --- Global Styles & Variables --- */
+      :root {
+        --primary-color: #007bff;
+        --secondary-color: #6c757d;
+        --success-color: #28a745;
+        --light-gray: #f8f9fa;
+        --dark-gray: #343a40;
+        --border-color: #ced4da;
+        --box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        --border-radius: 12px;
+      }
+
+      body {
+        font-family: "Sarabun", sans-serif;
+        background-color: var(--light-gray);
+        color: var(--dark-gray);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+        margin: 0;
+        padding: 20px;
+        box-sizing: border-box;
+      }
+
+      /* --- Main Container --- */
+      .settings-container {
+        background-color: #ffffff;
+        padding: 40px;
+        border-radius: var(--border-radius);
+        box-shadow: var(--box-shadow);
+        width: 100%;
+        max-width: 500px;
+        animation: fadeIn 0.5s ease-in-out;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+          transform: translateY(-20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* --- Header --- */
+      .settings-header {
+        text-align: center;
+        margin-bottom: 30px;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 20px;
+      }
+
+      .settings-header h1 {
+        font-weight: 700;
+        margin: 0;
+      }
+
+      .settings-header p {
+        margin-top: 5px;
+      }
+
+      /* --- Form Group --- */
+      .form-group {
+        margin-bottom: 25px;
+      }
+
+      .form-group label {
+        display: block;
+        font-weight: 500;
+        margin-bottom: 8px;
+        color: #555;
+      }
+
+      /* --- Input & Select Styling --- */
+      .form-control {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid var(--border-color);
+        border-radius: 8px;
+        font-size: 16px;
+        font-family: "Sarabun", sans-serif;
+        transition: border-color 0.3s, box-shadow 0.3s;
+        box-sizing: border-box; /* Ensures padding doesn't affect width */
+      }
+
+      .form-control:focus {
+        outline: none;
+        border-color: var(--primary-color);
+        box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.25);
+      }
+
+      /* Specific styling for color input */
+      input[type="color"] {
+        height: 48px;
+        padding: 5px; /* Adjust padding for color swatch */
+      }
+
+      /* --- Button Group --- */
+      .button-group {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+      }
+
+      .btn {
+        flex: 1;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        font-weight: 500;
+        font-family: "Sarabun", sans-serif;
+        cursor: pointer;
+        transition: background-color 0.3s, transform 0.2s;
+        text-align: center;
+      }
+
+      .btn:hover {
+        transform: translateY(-2px);
+      }
+
+      .btn-save {
+        background-color: var(--primary-color);
+        color: white;
+      }
+
+      .btn-save:hover {
+        background-color: #0056b3;
+      }
+
+      .btn-reset {
+        background-color: #f1f1f1;
+        color: var(--dark-gray);
+        border: 1px solid var(--border-color);
+      }
+
+      .btn-reset:hover {
+        background-color: #e2e2e2;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="settings-container">
+      <div class="settings-header">
+        <h1>ตั้งค่าการแสดงผล</h1>
+        <p>เลือกปรับแต่งสีและขนาดตัวอักษรของหน้าเว็บ</p>
+      </div>
+
+      <form>
+        <div class="form-group">
+          <label for="bgColor" class="hadColor">1. สีพื้นหลัง (Background Color)</label>
+          <input
+            type="color"
+            id="bgColor"
+            class="form-control"
+            value="#ffffff"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="fontColor" class="hadColor">2. สีตัวอักษร (Font Color)</label>
+          <input
+            type="color"
+            id="fontColor"
+            class="form-control"
+            value="#000000"
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="fontSize" class="hadColor">3. ขนาดตัวอักษร (Font Size)</label>
+          <select id="fontSize" class="form-control">
+            <option value="12px">เล็ก (Small)</option>
+            <option value="18px" selected>กลาง (Medium)</option>
+            <option value="24px">ใหญ่ (Large)</option>
+          </select>
+        </div>
+
+        <div class="button-group">
+          <button type="button" class="btn btn-reset">รีเซ็ต (Reset)</button>
+          <button type="button" class="btn btn-save">บันทึก (Save)</button>
+        </div>
+      </form>
+    </div>
+
+
+    <script src="main.js"></script>
+  </body>
+</html>
